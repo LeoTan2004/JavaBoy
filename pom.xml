@@ -9,7 +9,6 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>JavaBoy-Annotation</module>
         <module>JavaBoy-Core</module>
     </modules>
 
