@@ -46,7 +46,7 @@ public interface IdentifyElement extends Element {
 
     /**
      * 设置元素的Id
-     * @param 元素Id
+     * @param id 元素Id
      */
     void setId(String id);
 }

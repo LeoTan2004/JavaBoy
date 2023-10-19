@@ -9,6 +9,21 @@ package org.javaboy.core.element;
  */
 public final class RawStyle implements Style{
     private String styleName,styleValue;
+
+    public RawStyle(String name,String value){
+        styleName=name;
+        styleValue=value;
+    }
+
+    /**
+     * 将一个样式变为原始样式
+     * @param metaStyle 待转换的样式
+     */
+    public RawStyle(RawStyle metaStyle){
+        styleName=metaStyle.getName();
+        styleValue=metaStyle.getValue();
+    }
+
     @Override
     public String getName() {
         return styleName;

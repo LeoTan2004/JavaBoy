@@ -18,15 +18,6 @@ public interface StyleElement extends Element {
     void addStyle(Style style);
 
     /**
-     * 使用字符串直接添加样式
-     * <p><2023/10/19 Log4JErr>:砍了，这两个addStyle共存看着很不爽，所以我暂时不用这个直接添加style的版本，而是创了个RawStyle,私认为可以去掉这个重载的addStyle，或者封装一下用RawStyle传递给另一个addStyle</p>
-     * @param name
-     * @param value
-     */
-    @Deprecated
-    void addStyle(String name, String value);
-
-    /**
      * 根据样式名称获取此元素的特定样式
      * @param name
      */

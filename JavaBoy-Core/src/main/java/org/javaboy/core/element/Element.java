@@ -8,24 +8,27 @@ package org.javaboy.core.element;
  * @date 2023/10/11 14:17
  */
 public interface Element {
-    /**
-     * 使用键值对的方式获取属性
-     * (2023/10/19 Log4JErr) 砍了，qwq
-     * @param property 属性名称
-     * @return 属性的内容
-     */
-    @Deprecated
-    String getProperty(String property);
+    //既然Style可以抽象，Property也行！
 
     /**
-     * 通过键值对的方式设置属性
-     * (2023/10/19 Log4JErr) 也砍了，omo
-     * @param property 属性名称
-     * @param value    属性值
+     * 获取元素的某个属性
+     * @param propertyName 要获取的属性的名称
+     * @return
      */
-    @Deprecated
-    void setProperty(String property, String value);
+    ElementProperty getProperty(String propertyName);
 
+    /**
+     * 获取元素的某个属性，以原始的字符串为属性名和值
+     * <p>只是个语法糖</p>
+     * @param propertyName 要获取的属性的名称
+     * @return
+     */
+    default String getRawPropertyValue(String propertyName){
+        ElementProperty targetProperty= getProperty(propertyName);
+        return targetProperty.getValue();
+    }
+
+    void setProperty(ElementProperty property);
     /**
      * 获取此元素标签的名称
      * <p>可参考DOM中的tagName</p>

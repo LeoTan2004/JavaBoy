@@ -12,10 +12,9 @@ import java.util.Set;
  */
 public abstract class AbstractElement implements IdentifyElement, StyleElement {
     //TODO (LeoTan,2023/10/14 8:38) 这里需要将这些接口实现，这样大部分的子类就可以忽略这些接口的实现，简化开发
-    //(Log4JErr,2023/10/19 21:03) 诺！先偷懒一波，内置类用上
 
     @Override
-    public String getProperty(String property) {
+    public ElementProperty getProperty(String propertyName){
         return null;
     }
 
