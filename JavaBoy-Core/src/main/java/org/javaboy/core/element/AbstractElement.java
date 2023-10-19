@@ -19,7 +19,7 @@ public abstract class AbstractElement implements IdentifyElement, StyleElement {
     }
 
     @Override
-    public void setProperty(String property, String value) {
+    public void setProperty(ElementProperty property) {
 
     }
 
@@ -60,11 +60,6 @@ public abstract class AbstractElement implements IdentifyElement, StyleElement {
 
     @Override
     public void addStyle(Style style) {
-
-    }
-
-    @Override
-    public void addStyle(String name, String value) {
 
     }
 
