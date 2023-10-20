@@ -34,7 +34,6 @@ public interface AppendableElement extends Element {
 
     /**
      * 一次性添加多个子元素
-     * <p><Log4JErr 2023/10/19>一粒糖而已...</></p>
      * @param children 要添加的子元素集合
      */
     default void appendChildren(Element... children){

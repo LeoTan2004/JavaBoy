@@ -13,12 +13,12 @@ import java.util.Set;
 public abstract class AbstractElement implements IdentifyElement, StyleElement,AppendableElement,AttributedElement {
     //TODO (LeoTan,2023/10/14 8:38) 这里需要将这些接口实现，这样大部分的子类就可以忽略这些接口的实现，简化开发
     @Override
-    public ElementAttribute<?> getProperty(String propertyName){
+    public ElementAttribute<?> getAttribute(String propertyName){
         return null;
     }
 
     @Override
-    public void setProperty(ElementAttribute<?> property) {
+    public void setAttribute(ElementAttribute<?> property) {
 
     }
 
