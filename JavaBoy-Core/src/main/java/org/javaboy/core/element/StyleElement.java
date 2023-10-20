@@ -1,6 +1,6 @@
 package org.javaboy.core.element;
 
-import org.javaboy.core.properties.Style;
+import org.javaboy.core.attribute.Style;
 
 import java.util.Map;
 

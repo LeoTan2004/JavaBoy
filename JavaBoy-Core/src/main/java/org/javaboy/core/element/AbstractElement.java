@@ -1,7 +1,7 @@
 package org.javaboy.core.element;
 
-import org.javaboy.core.properties.Properties;
-import org.javaboy.core.properties.PropertiesBuilder;
+import org.javaboy.core.attribute.Properties;
+import org.javaboy.core.attribute.PropertiesBuilder;
 
 import java.util.concurrent.atomic.AtomicReference;
 

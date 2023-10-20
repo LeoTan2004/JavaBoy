@@ -1,4 +1,4 @@
-package org.javaboy.core.properties;
+package org.javaboy.core.attribute;
 
 import org.javaboy.core.UndefinedOperation;
 
