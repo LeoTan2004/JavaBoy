@@ -10,7 +10,7 @@ import java.util.Set;
  * @author Leo
  * @date 2023/10/11 14:20
  */
-public interface IdentifyElement extends PropertyElement {
+public interface IdentifyElement extends AttributedElement {
     /**
      * 获取该元素的所有类名
      *

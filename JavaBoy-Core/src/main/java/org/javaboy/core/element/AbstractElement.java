@@ -2,10 +2,7 @@ package org.javaboy.core.element;
 
 import org.javaboy.core.properties.Properties;
 import org.javaboy.core.properties.PropertiesBuilder;
-import org.javaboy.core.properties.Style;
 
-import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -38,21 +35,21 @@ public abstract class AbstractElement implements IdentifyElement, StyleElement, 
     }
 
     @Override
-    public String getProperty(String property) {
-        if (properties.get() == null || property.isEmpty()) {// 可能被动抛出空指针
+    public String getAttribute(String attribute) {
+        if (properties.get() == null || attribute.isEmpty()) {// 可能被动抛出空指针
             return null;
         }
-        return properties.get().get(property);
+        return properties.get().get(attribute);
     }
 
     @Override
-    public void setProperty(String property, String value) {
-        if (property == null || value == null)
-            throw new NullPointerException("property or value cannot be null");
+    public void setAttribute(String attribute, String value) {
+        if (attribute == null || value == null)
+            throw new NullPointerException("attribute or value cannot be null");
         if (properties.get() == null && initProperties()) {
             if (properties.get() == null)// recheck properties
                 throw new NullPointerException("properties initialize failed");
         }
-        properties.get().put(property, value);
+        properties.get().put(attribute, value);
     }
 }

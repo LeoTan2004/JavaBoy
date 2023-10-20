@@ -12,13 +12,13 @@ import java.util.Map;
  * @author Leo
  * @date 2023/10/11 14:26
  */
-public interface StyleElement extends PropertyElement {
+public interface StyleElement extends AttributedElement {
     /**
      * 添加样式
      *
      * @param style 样式
      */
-    void addStyle(Style style);
+    void addStyle(Style<?> style);
 
     /**
      * 获取样式
@@ -26,7 +26,7 @@ public interface StyleElement extends PropertyElement {
      * @param name 样式名称
      * @return 样式对象
      */
-    Style getStyle(String name);
+    Style<?> getStyle(String name);
 
     /**
      * 清除样式
@@ -38,6 +38,6 @@ public interface StyleElement extends PropertyElement {
      *
      * @return 样式的值
      */
-    Map<String, Style> getStyles();
+    Map<String, Style<?>> getStyles();
 
 }

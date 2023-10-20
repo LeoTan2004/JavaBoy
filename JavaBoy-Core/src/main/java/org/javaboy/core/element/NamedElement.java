@@ -7,7 +7,7 @@ package org.javaboy.core.element;
  * @author Leo
  * @date 2023/10/11 15:24
  */
-public interface NamedElement extends PropertyElement {
+public interface NamedElement extends AttributedElement {
     /**
      * 查询元素命名，如果没有手动命名，有可能返回空
      * <p>注意这里是有可能，他的实现可以让他默认生成名称，简化前后端交互时的代码</p>
