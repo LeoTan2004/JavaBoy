@@ -1,6 +1,6 @@
 package org.javaboy.core.element;
 
-import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -10,16 +10,15 @@ import java.util.Set;
  * @author Leo,Log4JErr
  * @date 2023/10/19 21:21
  */
-public abstract class AbstractElement implements IdentifyElement, StyleElement {
+public abstract class AbstractElement implements IdentifyElement, StyleElement,AppendableElement,AttributedElement {
     //TODO (LeoTan,2023/10/14 8:38) 这里需要将这些接口实现，这样大部分的子类就可以忽略这些接口的实现，简化开发
-
     @Override
-    public ElementProperty getProperty(String propertyName){
+    public ElementAttribute<?> getProperty(String propertyName){
         return null;
     }
 
     @Override
-    public void setProperty(ElementProperty property) {
+    public void setProperty(ElementAttribute<?> property) {
 
     }
 
@@ -59,12 +58,12 @@ public abstract class AbstractElement implements IdentifyElement, StyleElement {
     }
 
     @Override
-    public void addStyle(Style style) {
+    public void addStyle(Style<?> style) {
 
     }
 
     @Override
-    public Style getStyle(String name) {
+    public Style<?> getStyle(String name) {
         return null;
     }
 
@@ -74,7 +73,7 @@ public abstract class AbstractElement implements IdentifyElement, StyleElement {
     }
 
     @Override
-    public Style[] listStyle() {
+    public Map<String,Style<?>> getStyles() {
         return null;
     }
 }
