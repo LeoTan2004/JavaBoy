@@ -2,7 +2,7 @@ package org.javaboy.core.element;
 
 import org.javaboy.core.properties.Style;
 
-import java.util.List;
+import java.util.Map;
 
 /**
  * 能够设置样式的元素
@@ -12,7 +12,7 @@ import java.util.List;
  * @author Leo
  * @date 2023/10/11 14:26
  */
-public interface StyleElement extends Element {
+public interface StyleElement extends PropertyElement {
     /**
      * 添加样式
      *
@@ -22,6 +22,7 @@ public interface StyleElement extends Element {
 
     /**
      * 获取样式
+     *
      * @param name 样式名称
      * @return 样式对象
      */
@@ -34,8 +35,9 @@ public interface StyleElement extends Element {
 
     /**
      * 返回所有样式
+     *
      * @return 样式的值
      */
-    List<Style> listStyle();
+    Map<String, Style> getStyles();
 
 }

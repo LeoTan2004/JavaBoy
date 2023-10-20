@@ -4,7 +4,7 @@ import org.javaboy.core.properties.Properties;
 import org.javaboy.core.properties.PropertiesBuilder;
 import org.javaboy.core.properties.Style;
 
-import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * @date 2023/10/14 8:34
  */
 //TODO (LeoTan,2023/10/14 8:38) 这里需要将这些接口实现，这样大部分的子类就可以忽略这些接口的实现，简化开发
-public abstract class AbstractElement implements IdentifyElement, StyleElement {
+public abstract class AbstractElement implements IdentifyElement, StyleElement, AppendableElement {
     // 默认属性构造工厂
     private static final PropertiesBuilder defaultPropertiesBuilder = PropertiesBuilder.defaultPropertiesBuilder();
     // 属性对象工厂
@@ -25,16 +25,16 @@ public abstract class AbstractElement implements IdentifyElement, StyleElement {
     // K-V的形式存储属性
     private final AtomicReference<Properties> properties = new AtomicReference<>();
 
-    protected boolean initProperties() {
-        return properties.compareAndSet(null, builder.build());
-    }
-
     public AbstractElement() {
         this(defaultPropertiesBuilder);
     }
 
     public AbstractElement(PropertiesBuilder builder) {
         this.builder = builder;
+    }
+
+    protected boolean initProperties() {
+        return properties.compareAndSet(null, builder.build());
     }
 
     @Override
@@ -54,61 +54,5 @@ public abstract class AbstractElement implements IdentifyElement, StyleElement {
                 throw new NullPointerException("properties initialize failed");
         }
         properties.get().put(property, value);
-    }
-
-    @Override
-    public String getTagName() {
-        return null;
-    }
-
-    @Override
-    public Set<String> getClazz() {
-        return null;
-    }
-
-    @Override
-    public void setClazz(Set<String> clazz) {
-
-    }
-
-    @Override
-    public boolean isClazz(String clazz) {
-        return false;
-    }
-
-    @Override
-    public void addClazz(String clazz) {
-
-    }
-
-    @Override
-    public String getId() {
-        return null;
-    }
-
-    @Override
-    public void setId(String id) {
-
-    }
-
-    @Override
-    public void addStyle(Style style) {
-
-    }
-
-
-    @Override
-    public Style getStyle(String name) {
-        return null;
-    }
-
-    @Override
-    public void clearStyle() {
-
-    }
-
-    @Override
-    public List<Style> listStyle() {
-        return null;
     }
 }

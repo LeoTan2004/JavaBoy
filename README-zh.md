@@ -73,68 +73,68 @@
 
 ```mermaid
 classDiagram
-    direction BT
-    class AbstractElement {
-+ addClazz(String) void
+  direction BT
+  class AbstractElement {
++ getStyle(String) Style
++ setClazz(Set~String~) void
++ getClazz() Set~String~
++ setId(String) void
++ addStyle(Style) void
++ clearStyle() void
++ isClazz(String) boolean
++ getProperty(String) String
++ listStyle() List~Style~
+# initProperties() boolean
 + getId() String
 + setProperty(String, String) void
-+ getStyle(String) Style
-+ setId(String) void
-+ clearStyle() void
 + getTagName() String
-+ getClazz() Set~String~
-+ addStyle(String, String) void
-+ addStyle(Style) void
-+ isClazz(String) boolean
-+ setClazz(Set~String~) void
-+ listStyle() List~Style~
-+ getProperty(String) String
++ addClazz(String) void
 }
 class AppendableElement {
 <<Interface>>
++ getChild(int) Element
 + removeChild(int) void
++ getChildrenCount() int
 + appendChild(Element) void
 + clearChildren() void
-+ getChildrenCount() int
-+ addChild(Element, int) void
-+ getChild(int) Element
 + setChildren(List~Element~) void
++ addChild(Element, int) void
 }
 class Element {
 <<Interface>>
-+ getProperty(String) String
-+ setProperty(String, String) void
-+ getTagName() String
+
 }
 class IdentifyElement {
 <<Interface>>
-+ addClazz(String) void
-+ getId() String
 + isClazz(String) boolean
-+ setId(String) void
-+ setClazz(Set~String~) void
 + getClazz() Set~String~
++ setClazz(Set~String~) void
++ addClazz(String) void
++ setId(String) void
++ getId() String
 }
-class NamedElement {
+class PropertyElement {
 <<Interface>>
-+ setName(String) void
-+ getName() String
++ getProperty(String) String
++ getTagName() String
++ setProperty(String, String) void
 }
 class StyleElement {
 <<Interface>>
-+ clearStyle() void
-+ addStyle(String, String) void
-+ listStyle() List~Style~
 + addStyle(Style) void
 + getStyle(String) Style
++ clearStyle() void
++ listStyle() List~Style~
 }
 
+AbstractElement  ..>  AppendableElement
 AbstractElement  ..>  IdentifyElement
 AbstractElement  ..>  StyleElement
 AppendableElement  -->  Element
-IdentifyElement  -->  Element
-NamedElement  -->  Element
-StyleElement  -->  Element
+IdentifyElement  -->  PropertyElement
+PropertyElement  -->  Element
+StyleElement  -->  PropertyElement
+
 
 ```
 

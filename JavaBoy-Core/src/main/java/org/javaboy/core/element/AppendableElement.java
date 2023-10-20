@@ -45,7 +45,7 @@ public interface AppendableElement extends Element {
      * @param child 子元素
      * @param index 下标
      */
-    void addChild(Element child, int index);
+    void insertChild(Element child, int index);
 
     /**
      * 删除指定下标的元素
