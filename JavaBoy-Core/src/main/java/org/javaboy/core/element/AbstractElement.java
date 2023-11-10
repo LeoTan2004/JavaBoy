@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * @date 2023/10/14 8:34
  */
 //TODO (LeoTan,2023/10/14 8:38) 这里需要将这些接口实现，这样大部分的子类就可以忽略这些接口的实现，简化开发
-public abstract class AbstractElement implements IdentifyElement, StyleElement, AppendableElement {
+public abstract class AbstractElement implements IdentifyElement, StyleElement, AppendableElement, AttributedElement {
     // 默认属性构造工厂
     private static final AttributesBuilder DEFAULT_ATTRIBUTES_BUILDER = AttributesBuilder.defaultAttributesBuilder();
     // 属性对象工厂
