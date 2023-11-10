@@ -1,7 +1,7 @@
 package org.javaboy.core.element;
 
-import org.javaboy.core.attribute.Properties;
-import org.javaboy.core.attribute.PropertiesBuilder;
+import org.javaboy.core.attribute.Attribute;
+import org.javaboy.core.attribute.AttributesBuilder;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -15,18 +15,18 @@ import java.util.concurrent.atomic.AtomicReference;
 //TODO (LeoTan,2023/10/14 8:38) 这里需要将这些接口实现，这样大部分的子类就可以忽略这些接口的实现，简化开发
 public abstract class AbstractElement implements IdentifyElement, StyleElement, AppendableElement {
     // 默认属性构造工厂
-    private static final PropertiesBuilder defaultPropertiesBuilder = PropertiesBuilder.defaultPropertiesBuilder();
+    private static final AttributesBuilder DEFAULT_ATTRIBUTES_BUILDER = AttributesBuilder.defaultAttributesBuilder();
     // 属性对象工厂
-    private final PropertiesBuilder builder;
+    private final AttributesBuilder builder;
 
     // K-V的形式存储属性
-    private final AtomicReference<Properties> properties = new AtomicReference<>();
+    private final AtomicReference<Attribute> properties = new AtomicReference<>();
 
     public AbstractElement() {
-        this(defaultPropertiesBuilder);
+        this(DEFAULT_ATTRIBUTES_BUILDER);
     }
 
-    public AbstractElement(PropertiesBuilder builder) {
+    public AbstractElement(AttributesBuilder builder) {
         this.builder = builder;
     }
 

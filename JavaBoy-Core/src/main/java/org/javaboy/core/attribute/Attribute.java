@@ -9,6 +9,6 @@ import java.util.Map;
  * @author Leo
  * @date 2023/10/17 18:44
  */
-public abstract class Properties implements Map<String, String> {
+public abstract class Attribute implements Map<String, String> {
     //TODO (LeoTan,2023/10/18 20:50) 构建一个键值对形式的接口，需要更高的性能（针对性优化）
 }

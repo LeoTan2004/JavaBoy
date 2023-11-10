@@ -20,7 +20,7 @@ public interface AttributedElement extends Element {
      * 通过键值对的方式设置属性
      *
      * @param attribute 属性名称
-     * @param value    属性值
+     * @param value     属性值
      */
     void setAttribute(String attribute, String value);
 
